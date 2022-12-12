@@ -1,5 +1,6 @@
 import css from "./FriendListItem.module.css"
 import PropTypes from "prop-types"
+import { number } from "prop-types"
 
 export default function FriendsListItem({ friends }) {
 	return (
@@ -16,4 +17,15 @@ export default function FriendsListItem({ friends }) {
 			})}
 		</>
 	)
+}
+
+FriendsListItem.propTypes = {
+	friends: PropTypes.arrayOf(
+		PropTypes.shape({
+			avatar: PropTypes.string,
+			name: PropTypes.string,
+			isOnline: PropTypes.bool,
+			id: PropTypes.number,
+		})
+	),
 }

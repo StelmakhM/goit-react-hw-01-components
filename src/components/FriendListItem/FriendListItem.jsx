@@ -5,13 +5,13 @@ import { number } from "prop-types"
 export default function FriendsListItem({ friends }) {
 	return (
 		<>
-			{friends.map((friend) => {
-				const backgroundColor = friend.isOnline ? "green" : "red"
+			{friends.map(({ avatar, id, name, isOnline }) => {
+				const backgroundColor = isOnline ? "green" : "red"
 				return (
-					<li key={friend.id} className={css.item}>
+					<li key={id} className={css.item}>
 						<span className={css.status} style={{ backgroundColor: backgroundColor }}></span>
-						<img src={friend.avatar} alt="User avatar" width="48" />
-						<p className={css.name}>{friend.name}</p>
+						<img src={avatar} alt="User avatar" width="48" />
+						<p className={css.name}>{name}</p>
 					</li>
 				)
 			})}

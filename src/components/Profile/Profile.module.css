@@ -1,0 +1,79 @@
+@import-normalize;
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: sans-serif;
+	line-height: 1.5;
+	font-size: 20px;
+	color: #ffffff;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+	margin: 0;
+}
+ul,
+ol {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+img {
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+.profile {
+	width: 600px;
+	margin: 0 auto 20px auto;
+	padding-top: 15px;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	overflow: hidden;
+
+	text-align: center;
+
+	background-color: cadetblue;
+	border-radius: 20px;
+}
+.avatar {
+	width: 200px;
+	padding: 5px;
+
+	background-color: aqua;
+	border-radius: 50%;
+}
+.name {
+	font-size: 26px;
+	font-weight: 700;
+}
+.tag {
+	margin-bottom: 10px;
+	font-style: italic;
+}
+
+.stats {
+	width: 100%;
+	padding: 10px;
+	margin-top: 20px;
+
+	display: flex;
+	justify-content: space-around;
+
+	background-color: burlywood;
+}
+
+.label {
+	font-weight: 700;
+}

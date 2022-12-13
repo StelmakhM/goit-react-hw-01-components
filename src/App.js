@@ -1,29 +1,18 @@
-import user from "./components/Profile/user.json"
-import data from "./components/Statistics/data.json"
-import friends from "./components/FriendList/friends.json"
-import transactions from "./components/TransactionHistory/transactions.json"
+import user from "./data/user.json"
+import data from "./data/data.json"
+import friends from "./data/friends.json"
+import transactions from "./data/transactions.json"
 import Profile from "./components/Profile/Profile"
 import Statistics from "./components/Statistics/Statistics"
 import FriendsList from "./components/FriendList/FriendList"
-import FriendsListItem from "./components/FriendListItem/FriendListItem"
 import TransactionHistory from "./components/TransactionHistory/TransactionHistory"
-
-const {
-	username,
-	tag,
-	location,
-	avatar,
-	stats: { likes, followers, views },
-} = user
 
 export default function App() {
 	return (
 		<>
-			<Profile username={username} tag={tag} location={location} avatarPath={avatar} followers={followers} likes={likes} views={views} />
+			<Profile username={user.username} tag={user.tag} location={user.location} avatar={user.avatar} followers={user.stats.followers} likes={user.stats.likes} views={user.stats.views} />
 			<Statistics title="Upload stats" stats={data} />
-			<FriendsList>
-				<FriendsListItem friends={friends} />
-			</FriendsList>
+			<FriendsList friends={friends} />
 			<TransactionHistory items={transactions} />
 		</>
 	)
